@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Screen Portal – Receiver</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="connect">
+  <div class="box">
+    <h2>Connect to the sender</h2>
+    <label>Sender IP address</label>
+    <input type="text" id="ip" placeholder="e.g. 192.168.178.20">
+    <label>Code</label>
+    <input type="text" id="code" placeholder="6 digits" maxlength="6">
+    <button id="go">Connect</button>
+    <div id="status"></div>
+    <p style="color:var(--muted);font-size:12px;margin-top:18px">IP and code are shown at the bottom of the Sender after "Start sharing".</p>
+  </div>
+</div>
+
+<div id="view">
+  <video id="v" autoplay muted playsinline></video>
+</div>
+<div id="tbar" style="display:none">
+  <span id="state">Connected</span>
+  <label><input type="checkbox" id="ctl" checked> Control</label>
+  <button class="ghost" id="fs">Fullscreen</button>
+  <button class="ghost" id="bye">Disconnect</button>
+</div>
+
+<script src="common.js"></script>
+<script src="receiver.js"></script>
+</body>
+</html>

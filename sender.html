@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Screen Portal – Sender</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside>
+    <h2>1. Choose a source</h2>
+    <button class="ghost" id="refresh">Reload</button>
+    <div id="list" style="margin-top:10px"></div>
+  </aside>
+  <main>
+    <div id="stage">
+      <video id="pv" muted playsinline></video>
+      <div id="sel"></div>
+      <div id="hint">2. Drag on the preview to share only a region (click = whole source)</div>
+    </div>
+    <div class="bar">
+      <button class="ghost" id="reset">Whole source</button>
+      <label>Frame rate
+        <select id="fps"><option>30</option><option selected>60</option></select>
+      </label>
+      <label><input type="checkbox" id="ctl" checked> Allow touch/pen control</label>
+      <span id="cropinfo" style="color:var(--muted)"></span>
+    </div>
+    <div class="bar">
+      <button id="share">3. Start sharing</button>
+      <div id="info"><span class="dot" id="dot"></span><span id="infotext">Not sharing yet</span></div>
+    </div>
+  </main>
+</div>
+<script src="common.js"></script>
+<script src="sender.js"></script>
+</body>
+</html>

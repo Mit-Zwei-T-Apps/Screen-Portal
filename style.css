@@ -1,0 +1,64 @@
+:root {
+  --bg: #0e1116; --panel: #161b22; --line: #2a313c; --text: #e6edf3; --muted: #8b949e;
+  --accent: #4f9cff; --ok: #3fb950; --bad: #f85149;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+  font: 14px/1.4 "Segoe UI", system-ui, sans-serif; overflow: hidden; }
+button { background: var(--accent); color: #fff; border: 0; border-radius: 8px; padding: 8px 14px;
+  font: inherit; cursor: pointer; }
+button.ghost { background: transparent; border: 1px solid var(--line); color: var(--text); }
+button:hover { filter: brightness(1.1); }
+button.stop { background: var(--bad); }
+input[type=text] { background: #0b0f14; border: 1px solid var(--line); color: var(--text);
+  border-radius: 8px; padding: 9px 12px; font: inherit; width: 100%; }
+select { background: #0b0f14; color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; }
+
+/* Startseite */
+.home { height: 100%; display: grid; place-items: center; }
+.home h1 { text-align: center; margin: 0 0 6px; font-size: 28px; }
+.home p.sub { text-align: center; color: var(--muted); margin: 0 0 28px; }
+.cards { display: flex; gap: 18px; }
+.card { width: 300px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+  padding: 22px; cursor: pointer; text-decoration: none; color: inherit; }
+.card:hover { border-color: var(--accent); }
+.card h2 { margin: 0 0 6px; font-size: 18px; }
+.card p { margin: 0; color: var(--muted); }
+
+/* Sender */
+.app { height: 100%; display: grid; grid-template-columns: 300px 1fr; }
+aside { background: var(--panel); border-right: 1px solid var(--line); padding: 12px; overflow: auto; }
+aside h2 { margin: 0 0 8px; font-size: 15px; }
+.src { border: 2px solid transparent; border-radius: 10px; padding: 6px; margin-bottom: 8px;
+  background: #0b0f14; cursor: pointer; }
+.src.sel { border-color: var(--accent); }
+.src img { width: 100%; border-radius: 6px; display: block; }
+.src span { display: block; margin-top: 4px; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+main { display: flex; flex-direction: column; min-width: 0; }
+#stage { position: relative; flex: 1; background: #000; min-height: 0; touch-action: none; user-select: none; }
+#pv { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+#sel { position: absolute; border: 2px solid var(--accent); box-shadow: 0 0 0 9999px rgba(0,0,0,.55);
+  pointer-events: none; display: none; }
+#hint { position: absolute; left: 12px; bottom: 10px; color: var(--muted); font-size: 12px; pointer-events: none; }
+.bar { display: flex; align-items: center; gap: 14px; padding: 10px 12px; border-top: 1px solid var(--line);
+  background: var(--panel); flex-wrap: wrap; }
+.bar label { display: flex; align-items: center; gap: 6px; }
+#info { color: var(--muted); }
+#info b { color: var(--text); font-size: 16px; letter-spacing: 1px; }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--muted); margin-right: 6px; }
+.dot.on { background: var(--ok); }
+
+/* Empfänger */
+#connect { height: 100%; display: grid; place-items: center; }
+#connect .box { width: 340px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+#connect h2 { margin: 0 0 14px; }
+#connect label { display: block; margin: 10px 0 4px; color: var(--muted); }
+#connect button { width: 100%; margin-top: 16px; }
+#status { margin-top: 12px; color: var(--muted); min-height: 20px; }
+#view { position: fixed; inset: 0; background: #000; touch-action: none; user-select: none; display: none; }
+#v { width: 100%; height: 100%; object-fit: contain; background: #000; }
+#tbar { position: fixed; top: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; align-items: center;
+  background: rgba(22,27,34,.92); border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px;
+  transition: opacity .25s; z-index: 5; }
+#tbar.hide { opacity: 0; pointer-events: none; }
+#tbar label { display: flex; align-items: center; gap: 6px; }

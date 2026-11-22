@@ -1,0 +1,26 @@
+{
+  "name": "screen-portal",
+  "productName": "Screen Portal",
+  "version": "1.0.0",
+  "author": "Matteo Mit Zwei T",
+  "license": "MIT",
+  "description": "Share selected parts of a screen to another device – with touch and pen control",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "electron": "^45.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "de.mitzweit.screenportal",
+    "asarUnpack": ["injector.ps1"],
+    "files": ["**/*", "!README.md"],
+    "win": { "target": "portable" }
+  }
+}
